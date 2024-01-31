@@ -6,6 +6,7 @@ import android.os.Build
 import android.util.DisplayMetrics
 import android.view.Display
 import android.view.WindowManager
+import android.content.res.Resources
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
@@ -77,6 +78,7 @@ internal class MethodCallHandlerImpl(
             displayResult["heightPx"] = metrics.heightPixels.toDouble()
             displayResult["xDpi"] = metrics.xdpi
             displayResult["yDpi"] = metrics.ydpi
+            displayResult["density"] = Resources.getSystem().displayMetrics.density
             build["displayMetrics"] = displayResult
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

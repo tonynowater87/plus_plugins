@@ -240,6 +240,7 @@ class AndroidDisplayMetrics {
     required this.heightPx,
     required this.xDpi,
     required this.yDpi,
+    required this.density
   });
 
   /// Gets the absolute width in pixels of the largest region of the display accessible to an app
@@ -255,6 +256,8 @@ class AndroidDisplayMetrics {
 
   /// The exact physical pixels per inch of the screen in the Y dimension.
   final double yDpi;
+
+  final double density;
 
   /// The exact physical display width in inches.
   double get widthInches => widthPx / xDpi;
@@ -276,6 +279,7 @@ class AndroidDisplayMetrics {
       'heightPx': heightPx,
       'xDpi': xDpi,
       'yDpi': yDpi,
+      'density' : density,
     };
   }
 
@@ -286,6 +290,7 @@ class AndroidDisplayMetrics {
       heightPx: map['heightPx'],
       xDpi: map['xDpi'],
       yDpi: map['yDpi'],
+      density: map['density'],
     );
   }
 }
